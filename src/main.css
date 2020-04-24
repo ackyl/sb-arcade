@@ -1,3 +1,7 @@
+/* --------- */
+/*   Init    */
+/* --------- */
+
 html, body {
   height: 100%;
   margin: 0;
@@ -10,7 +14,9 @@ html, body {
   src: url(font/arcade.ttf);
 }
 
+/* --------- */
 /* Section 1 */
+/* --------- */
 
 .section-1 {
   position: relative;
@@ -18,22 +24,6 @@ html, body {
   height: 100vh;
   display: table;
   left: 0;
-}
-
-.section-1l, .section-1r {
-  position: relative;
-  width: 50%;
-  display: table-cell;
-  top: 0;
-  transition: all 2s ease;
-}
-
-.section-1l {
-  padding: 33px 0 0 144px;
-}
-
-.section-1r {
-  padding: 56px 144px 0 0;
 }
 
 .section-move-out {
@@ -45,16 +35,39 @@ html, body {
   display: none;
 }
 
-/* Section 1 Left */
+/* Title Left */
 
-.input-box {
-  margin-top: 33px;
+.title-left {
+  padding: 33px 0 0 144px;
 }
 
 .title-left > h1 {
   font-size: 57px;
   margin: 0;
   font-weight: 600;
+}
+
+@media screen and (max-width: 600px) {
+  .title-left {
+    padding: 33px 0 0 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title-left {
+    padding: 33px 0 0 64px;
+  }
+}
+
+/* Input */
+
+.input-box {
+  margin-top: 33px;
+  padding-left: 144px;
+}
+
+.input-name {
+  margin-bottom: 8px;
 }
 
 .input-box > p {
@@ -72,16 +85,47 @@ html, body {
   font-weight: 600;
 }
 
-/* Section 1 Right */
+@media screen and (max-width: 600px) {
+  .input-box {
+    padding: 0 16px;
+  }
+  .input-box > input {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .input-box {
+    padding: 0 64px;
+  }
+}
+
+/* Title Right */
 
 .title-right {
-  text-align: right;
+  position: absolute;
+  top: 56px;
+  right: 144px;
 }
 
 .title-right > h2 {
   font-size: 26px;
   margin: 0;
 }
+
+@media screen and (max-width: 600px) {
+  .title-right {
+    right: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title-right {
+    right: 64px;
+  }
+}
+
+/* How To */
 
 .how-to {
   position: absolute;
@@ -96,15 +140,52 @@ html, body {
   text-align: right;
 }
 
+@media screen and (max-width: 600px) {
+  .how-to {
+    position: static;
+    margin: 16px 0 0 0;
+  }
+
+  .how-to > p {
+    max-width: 100%;
+    text-align: left;
+    padding: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .how-to {
+    right: 64px;
+  }
+}
+
+/* Go Button */
+
 .go-btn {
   position: absolute;
   right: 144px;
   top: 500px;
-  margin: 16px 0 0 48px;
   cursor: pointer;
   transition: all .8s ease;
+}
+
+.go-btn > h2 {
+  display: inline-block;
+  vertical-align: bottom;
   font-family: arcade;
   font-size: 45px;
+  margin: 0;
+  margin-right: 8px;
+}
+
+.go-btn > img {
+  bottom: 24px;
+  display: inline-block;
+  position: relative;
+  vertical-align: bottom;
+  height: 30px;
+  left: 0;
+  transition: all .8s ease;
 }
 
 .go-btn:hover {
@@ -112,7 +193,27 @@ html, body {
   transition: all .8s ease;
 }
 
+.go-btn:hover > img {
+  left: 8px;
+  color: red;
+  transition: all .8s ease;
+}
+
+@media screen and (max-width: 600px) {
+  .go-btn {
+    right: 16px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .go-btn {
+    right: 64px;
+  }
+}
+
+/* --------- */
 /* Section 2 */
+/* --------- */
 
 .section-2 {
   position: relative;
@@ -129,7 +230,7 @@ html, body {
 
 .section-move-in {
   left: 0;
-  transition: all 2s ease;
+  transition: all 1.5s ease;
 }
 
 .section-2l, .section-2r {
